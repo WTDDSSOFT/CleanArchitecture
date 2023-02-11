@@ -30,7 +30,7 @@ protocol HttpPosstClient {
 
 final class RemoteAddAccountTests: XCTestCase {
 
-   func test_() throws {
+   func test_add_should_call_httpClient_with_correct_url() throws {
       let url = URL(string: "https://any-url.com")!
       let httpClientSpy = HttpClientSpy()
       //class instance.
