@@ -7,15 +7,29 @@
 
 import Foundation
 
-protocol AddAcount {
+public protocol AddAcount {
    // recebe alguns dados do cadastros
-   func add(addAccountModel: addAccountModel, completion: @escaping(Result<AccountModel, Error>) -> ())
+   func add(addAcountModel: AddAccountModel,
+            completion: @escaping(Result<AccountModel, Error>) -> ())
 }
 
-struct AccountModel {
-   var name: String
-   var email: String
-   var password: String
-   var passwordConfirmation: String
+public struct AddAccountModel: Model {
+
+   public  var name: String
+   public  var email: String
+   public  var password: String
+   public  var passwordConfirmation: String
+
+   public init(
+      name: String,
+      email: String,
+      password: String,
+      passwordConfirmation: String
+   ) {
+      self.name = name
+      self.email = email
+      self.password = password
+      self.passwordConfirmation = passwordConfirmation
+   }
 }
 
